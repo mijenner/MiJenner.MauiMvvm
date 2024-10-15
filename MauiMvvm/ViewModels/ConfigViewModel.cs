@@ -1,7 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input; 
-using MiJenner.ServicesMAUI; 
-
-namespace MauiMvvm.ViewModels
+﻿namespace MauiMvvm.ViewModels
 {
     public partial class ConfigViewModel : BaseViewModel
     {

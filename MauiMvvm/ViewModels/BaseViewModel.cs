@@ -1,13 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using MiJenner.ServicesMAUI;
-
-namespace MauiMvvm.ViewModels
+﻿namespace MauiMvvm.ViewModels
 {
     public partial class BaseViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string companyName = "MyCompany a/s";
+        private string companyName = "MyCompany";
         [ObservableProperty]
         private string appName = "My Smart App";
         [ObservableProperty]

@@ -4,39 +4,75 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiMvvm"
+    xmlns:models="clr-namespace:MauiMvvm.Models"
     xmlns:viewmodels="clr-namespace:MauiMvvm.ViewModels"
     Title="{Binding Title}"
     x:DataType="viewmodels:MainViewModel">
 
-    <StackLayout
-        Padding="10"
-        Orientation="Vertical"
-        Spacing="10">
-        <Label FontSize="Title" Text=".NET MAUI MVVM architecture" />
-        <Label FontSize="Body" Text="{Binding AppName}" />
-        <Label FontSize="Body" Text="{Binding CompanyName}" />
-        <Label FontSize="Subtitle" Text="Test IsBusy: " />
-        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-        <Button
-            Command="{Binding TestIsBusyCommand}"
-            FontSize="Body"
-            HorizontalOptions="Fill"
-            Text="Test IsBusyCommand" />
-        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+    <ScrollView>
+
+        <StackLayout
+            Padding="10"
+            Orientation="Vertical"
+            Spacing="10">
+            <Label FontSize="Title" Text=".NET MAUI MVVM architecture" />
+            <Label FontSize="Body" Text="{Binding AppName}" />
+            <Label FontSize="Body" Text="{Binding CompanyName}" />
+            <Label FontSize="Subtitle" Text="Test IsBusy: " />
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             <Button
-                Command="{Binding GotoConfigCommand}"
+                Command="{Binding TestIsBusyCommand}"
                 FontSize="Body"
                 HorizontalOptions="Fill"
-                Text="Go to Config" />
+                Text="Test IsBusyCommand" />
+
+            <CollectionView
+                Margin="20"
+                HorizontalOptions="FillAndExpand"
+                ItemsLayout="VerticalList"
+                ItemsSource="{Binding Items}"
+                SelectionMode="Single"
+                VerticalOptions="FillAndExpand">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Item">
+                        <Border Padding="3">
+
+                            <StackLayout Padding="10">
+                                <Label FontSize="Subtitle" Text="{Binding Name, StringFormat='Navn : {0}'}" />
+                                <Label FontSize="Body" Text="{Binding Description, StringFormat='Note: {0}'}" />
+                                <Label FontSize="Body" Text="{Binding Id, StringFormat='Id: {0}'}" />
+                            </StackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=GotoDetailsCommand}" CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
             <Button
                 Grid.Column="1"
-                Command="{Binding GotoDetailsCommand}"
+                Command="{Binding GetItemsCommand}"
                 FontSize="Body"
                 HorizontalOptions="Fill"
-                Text="Go to Details" />
+                Text="Hent data" />
 
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button
+                    Command="{Binding GotoConfigCommand}"
+                    FontSize="Body"
+                    HorizontalOptions="Fill"
+                    Text="Go to Config" />
+                <!--<Button
+                    Grid.Column="1"
+                    Command="{Binding GotoDetailsCommand}"
+                    FontSize="Body"
+                    HorizontalOptions="Fill"
+                    Text="Go to Details" />-->
+            </Grid>
 
-        </Grid>
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Maui;
+using MauiMvvm.Models;
 using MauiMvvm.ViewModels;
 using MauiMvvm.Views;
 using Microsoft.Extensions.Logging;
+using MiJenner.ServicesGeneric;
 using MiJenner.ServicesMAUI;
 
 namespace MauiMvvm
@@ -22,7 +24,8 @@ namespace MauiMvvm
 
             // Services: 
             builder.Services.AddSingleton<FilePathService>();
-            builder.Services.AddSingleton<ISettingsService, SettingsService>(); 
+            builder.Services.AddSingleton<ISettingsService, SettingsService>();
+            builder.Services.AddSingleton<ICrudIdService<Item>, CrudIdServiceInMemory<Item>>();
             // Pages: 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddTransient<ConfigPage>();

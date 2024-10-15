@@ -1,0 +1,9 @@
+﻿global using System.Collections.ObjectModel;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using MiJenner.ServicesMAUI;
+global using MiJenner.ServicesGeneric;
+global using MauiMvvm.Models;
+global using MauiMvvm.Views;
+global using MauiMvvm.ViewModels;
+global using MauiMvvm.Services;

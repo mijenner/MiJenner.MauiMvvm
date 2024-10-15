@@ -1,9 +1,11 @@
-﻿namespace MauiMvvm.Models
+﻿using MiJenner.ServicesGeneric;
+
+namespace MauiMvvm.Models
 {
-    public class Item
+    public class Item : IHasGuid 
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public Guid Id { get; set; }
+        public required string Name { get; set; }
+        public string? Description { get; set; }
     }
 }

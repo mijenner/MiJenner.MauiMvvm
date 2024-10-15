@@ -12,16 +12,13 @@
         Padding="10"
         Orientation="Vertical"
         Spacing="10">
-        <Label FontSize="Title" Text=".NET MAUI MVVM architecture" />
         <Label FontSize="Body" Text="{Binding AppName}" />
         <Label FontSize="Body" Text="{Binding CompanyName}" />
-        <Label FontSize="Title" Text="Test IsBusy: " />
-        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-        <!--<Button
-            Command="{Binding TestIsBusyCommand}"
-            FontSize="Body"
-            HorizontalOptions="Fill"
-            Text="Read device file path" />-->
+        <Label FontSize="Title" Text="Details about Item:" />
+        <Entry FontSize="Body" Text="{Binding Item.Name}" />
+        <Entry FontSize="Body" Text="{Binding Item.Description}" />
+        <Label FontSize="Body" Text="{Binding Item.Id}" />
+
         <Button
             Command="{Binding GoBackCommand}"
             FontSize="Body"
