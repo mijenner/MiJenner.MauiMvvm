@@ -12,4 +12,10 @@ public partial class DetailsPage : ContentPage
 		BindingContext = viewModel;
 		this.viewModel = viewModel;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+    }
 }

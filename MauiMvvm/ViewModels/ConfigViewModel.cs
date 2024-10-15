@@ -1,5 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
-using MiJenner.ServicesMAUI;
+﻿using CommunityToolkit.Mvvm.Input; 
+using MiJenner.ServicesMAUI; 
 
 namespace MauiMvvm.ViewModels
 {
@@ -13,9 +13,19 @@ namespace MauiMvvm.ViewModels
             Title = "Config";
             this.settingsService = settingsService;
             this.filePathService = filePathService;
-            // SaveUserSettingsAsync(); 
-            FetchUserSettingsAsync();
+        }
 
+        public async Task LoadPageData()
+        {
+            try
+            {
+                await FetchUserSettingsAsync(); 
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Read-problem", "Problems reading user settings", "Ok"); 
+                throw;
+            }
         }
 
         [RelayCommand]
@@ -23,6 +33,7 @@ namespace MauiMvvm.ViewModels
         {
             await settingsService.Save(nameof(UserName), UserName);
             await settingsService.Save(nameof(WantNotifications), WantNotifications);
+            await Shell.Current.DisplayAlert("Saved!", "User settings saved", "Ok"); 
         }
 
         [RelayCommand]

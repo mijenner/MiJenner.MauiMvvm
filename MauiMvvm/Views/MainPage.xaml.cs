@@ -12,5 +12,11 @@ namespace MauiMvvm
             BindingContext = viewModel;
             this.viewModel = viewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+        }
     }
 }

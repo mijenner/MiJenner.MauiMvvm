@@ -36,12 +36,7 @@ namespace MauiMvvm.ViewModels
         {
             this.filePathService = filePathService;
             this.settingsService = settingsService;
-            UserName = "Kurt"; 
-            WantNotifications = true;
         }
-
-
-
 
         [RelayCommand]
         public async Task GetFilePathAsync()

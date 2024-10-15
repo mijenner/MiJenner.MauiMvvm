@@ -14,6 +14,9 @@ public partial class ConfigPage : ContentPage
 		BindingContext = viewModel; 
 	}
 
-
-
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		viewModel?.LoadPageData(); 
+    }
 }
