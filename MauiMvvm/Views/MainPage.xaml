@@ -5,26 +5,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiMvvm"
     xmlns:viewmodels="clr-namespace:MauiMvvm.ViewModels"
+    Title="{Binding Title}"
     x:DataType="viewmodels:MainViewModel">
 
-    <StackLayout Padding="30,0" Orientation="Vertical">
-        <Label FontSize="Header" Text=".NET MAUI MVVM architecture" />
+    <StackLayout
+        Padding="10"
+        Orientation="Vertical"
+        Spacing="10">
+        <Label FontSize="Title" Text=".NET MAUI MVVM architecture" />
         <Label FontSize="Body" Text="{Binding AppName}" />
         <Label FontSize="Body" Text="{Binding CompanyName}" />
-        <Label FontSize="Subtitle" Text="Device file path: " />
-        <Label FontSize="Body" Text="{Binding FilePath}" />
-        <Button
-            Command="{Binding GetFilePathCommand}"
-            FontSize="Body"
-            HorizontalOptions="Fill"
-            Text="Read device file path" />
-        <Label FontSize="Title" Text="Test IsBusy: " />
+        <Label FontSize="Subtitle" Text="Test IsBusy: " />
         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
         <Button
             Command="{Binding TestIsBusyCommand}"
             FontSize="Body"
             HorizontalOptions="Fill"
-            Text="Read device file path" />
+            Text="Test IsBusyCommand" />
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+            <Button
+                Command="{Binding GotoConfigCommand}"
+                FontSize="Body"
+                HorizontalOptions="Fill"
+                Text="Go to Config" />
+            <Button
+                Grid.Column="1"
+                Command="{Binding GotoDetailsCommand}"
+                FontSize="Body"
+                HorizontalOptions="Fill"
+                Text="Go to Details" />
+
+
+        </Grid>
     </StackLayout>
 
 </ContentPage>

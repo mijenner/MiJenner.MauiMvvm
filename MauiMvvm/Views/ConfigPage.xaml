@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiMvvm.Views.ConfigPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:MauiMvvm.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="viewmodels:ConfigViewModel">
+
+    <StackLayout
+        Padding="10"
+        Orientation="Vertical"
+        Spacing="10">
+        <Label FontSize="Title" Text=".NET MAUI MVVM architecture" />
+        <Label FontSize="Body" Text="{Binding AppName}" />
+        <Label FontSize="Body" Text="{Binding CompanyName}" />
+        <Label FontSize="Body" Text="{Binding Version}" />
+        <Label FontSize="Subtitle" Text="Device file path: " />
+        <Label FontSize="Body" Text="{Binding FilePath}" />
+        <Button
+            Command="{Binding GetFilePathCommand}"
+            FontSize="Body"
+            HorizontalOptions="Fill"
+            Text="Read device file path" />
+        <Label FontSize="Subtitle" Text="User settings: " />
+        <Label FontSize="Body" Text="Username: " />
+        <Entry FontSize="Body" Text="{Binding UserName, Mode=TwoWay}" />
+        <Label FontSize="Body" Text="{Binding WantNotifications, StringFormat='Want notifications: {0}'}" />
+        <Switch IsToggled="{Binding WantNotifications}" />
+        <Button
+            Command="{Binding SaveUserSettingsCommand}"
+            FontSize="Body"
+            HorizontalOptions="Fill"
+            Text="Save user settings" />
+
+        <Button
+            Command="{Binding GoBackCommand}"
+            FontSize="Body"
+            HorizontalOptions="Fill"
+            Text="Go to main" />
+    </StackLayout>
+
+</ContentPage>
