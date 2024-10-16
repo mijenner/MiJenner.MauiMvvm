@@ -7,3 +7,5 @@ global using MauiMvvm.Models;
 global using MauiMvvm.Views;
 global using MauiMvvm.ViewModels;
 global using MauiMvvm.Services;
+global using CommunityToolkit.Maui;
+global using Microsoft.Extensions.Logging;

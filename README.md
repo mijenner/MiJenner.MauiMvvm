@@ -11,8 +11,12 @@ It has three views: MainPage, DetailsPage, and ConfigPage.
 
 Navigation is operational. Navigation to ConfigPage is simple, without passing data. Navigation to DetailsPage passes an instance of Item to DetailsPage. 
 
+It has a view-model per page which often seems to be useful. In addition it has a BaseViewModel for common stuff like Title, IsBusy and much more. This is highly inspired by James Montemagno's MonkeyFinder-project. 
+
 # Package dependencies 
+It uses Nuget packages: CommunityToolkit.Mvvm (https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/) and CommunityToolkit.Maui (https://github.com/CommunityToolkit/Maui) enabling less boilerplate code to be written. 
+
 It uses MiJenner.ServicesMAUI Nuget package, source code here: https://github.com/mijenner/MiJenner.ServicesMAUI for easy file-system access 
-and storage of user settings. 
+and storage of user settings. This is highly inspired by youtuber Daniel Hindrikes. 
 
 It uses MiJenner.ServicesGeneric Nuget package, source code here: https://github.com/mijenner/MiJenner.ServicesGeneric for an in-memory memory storage. 

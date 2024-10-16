@@ -36,6 +36,16 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<AssemblyName>MiJenner.$(MSBuildProjectName)</AssemblyName>
+		<Title>MiJenner.MauiMvvm</Title>
+		<Authors>Michael Jenner</Authors>
+		<Company>Jenner IT</Company>
+		<Copyright>Copyright (c) 2024 Michael Jenner</Copyright>
+		<PackageProjectUrl>https://github.com/mijenner/MiJenner.MauiMvvm</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/mijenner/MiJenner.MauiMvvm</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -54,6 +64,17 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\LICENSE.txt">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>

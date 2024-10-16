@@ -1,12 +1,4 @@
-﻿using CommunityToolkit.Maui;
-using MauiMvvm.Models;
-using MauiMvvm.ViewModels;
-using MauiMvvm.Views;
-using Microsoft.Extensions.Logging;
-using MiJenner.ServicesGeneric;
-using MiJenner.ServicesMAUI;
-
-namespace MauiMvvm
+﻿namespace MauiMvvm
 {
     public static class MauiProgram
     {
