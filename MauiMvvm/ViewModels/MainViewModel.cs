@@ -1,14 +1,16 @@
-﻿namespace MauiMvvm.ViewModels
+﻿using MiJenner.ServicesGeneric;
+
+namespace MauiMvvm.ViewModels
 {
     public partial class MainViewModel : BaseViewModel
     {
         [ObservableProperty]
         public ObservableCollection<Item> items;
-        ISettingsService settingsService;
+        MiJenner.ServicesMAUI.ISettingsService settingsService;
         FilePathService filePathService;
         ICrudIdService<Item> crudIdService;
 
-        public MainViewModel(ICrudIdService<Item> crudIdService, ISettingsService settingsService, FilePathService filePathService) : base(settingsService, filePathService)
+        public MainViewModel(ICrudIdService<Item> crudIdService, MiJenner.ServicesMAUI.ISettingsService settingsService, FilePathService filePathService) : base(settingsService, filePathService)
         {
             Title = "Main";
             this.settingsService = settingsService;

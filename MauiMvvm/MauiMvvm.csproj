@@ -80,11 +80,11 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.91" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.92" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.92" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
-		<PackageReference Include="MiJenner.ServicesGeneric" Version="1.0.0" />
-		<PackageReference Include="MiJenner.ServicesMAUI" Version="1.1.0" />
+		<PackageReference Include="MiJenner.ServicesGeneric" Version="1.5.0" />
+		<PackageReference Include="MiJenner.ServicesMAUI" Version="1.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>

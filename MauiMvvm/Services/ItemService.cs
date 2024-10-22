@@ -1,4 +1,6 @@
-﻿namespace MauiMvvm.Services
+﻿using MiJenner.ServicesGeneric;
+
+namespace MauiMvvm.Services
 {
     public class ItemService
     {

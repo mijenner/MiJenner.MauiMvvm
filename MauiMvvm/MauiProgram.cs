@@ -1,4 +1,7 @@
-﻿namespace MauiMvvm
+﻿using MiJenner.ServicesGeneric;
+using MiJenner.ServicesMAUI;
+
+namespace MauiMvvm
 {
     public static class MauiProgram
     {
@@ -16,7 +19,7 @@
 
             // Services: 
             builder.Services.AddSingleton<FilePathService>();
-            builder.Services.AddSingleton<ISettingsService, SettingsService>();
+            builder.Services.AddSingleton<MiJenner.ServicesMAUI.ISettingsService, MiJenner.ServicesMAUI.SettingsService>();
             builder.Services.AddSingleton<ICrudIdService<Item>, CrudIdServiceInMemory<Item>>();
             // Pages: 
             builder.Services.AddSingleton<MainPage>();
